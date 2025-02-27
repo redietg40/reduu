@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav-main{
+            width:100%;
+            height:80px;
+            background-color: #FFF;
+            display:flex;
+            flex-wrap:wrap;
+        } 
+.image{
+    width: 100px;
+    height: 80px;
+}
+nav.nav-main{
+    background-color: dimgrey;
+    height: 80px;
+
+}
+ul.head{
+  padding-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  height: 80px;
+  padding-top: 10px ;
+
+}
+.head li a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.head li{
+    list-style: none;
+} 
+span.link{
+    display: block;
+    padding: 10px 0px;
+}
+div.dropdown{
+    height: 70px;
+    position: absolute;
+    background-color: aqua;
+    z-index: 1000;
+    display: none;
+} 
+.cons{
+    position: relative;
+} 
+a.cons:hover{
+   opacity: 0.5;;
+}
+.up:hover .dropdown {
+    display: block;
+}
+.link:hover{
+background-color: rgb(201, 224, 0);
+}
+</style>
+</head>
+<body>
+    <nav class="nav-main" >
+        <div class="btn-toggle-nav"><img class="image"
+            src="apple.jpg"></div>
+        <ul class="head">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About Us</a></li>        
+            <li><a href="#">Gallery</a></li>
+            <div class="up"><li><a href="#" class="cons">Contact</a>           
+                <div class="dropdown">
+                    <span class="link"> For Students</span>
+                    <span  class="link">For Trainers</span>
+                    
+                    </div></div>
+            
+        </li>
+</ul>
+    </nav>
+</body>
+</html>

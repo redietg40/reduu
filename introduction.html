@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introductionpro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <link href="project1.css" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <p>wellcome to my first project</p>
+        <p>i am rediet</p>
+    </section>
+    <section>
+        <span>about</span>
+       <p> i am web developer skill and i love the internet programing 
+        language now specialy focus on css,html,anfd javascript</p>
+    </section>
+    <section>
+        <span>project</span>
+        <p>my first project is how to sign in or login some register for 
+            example to register online job without physical contact </p>
+
+    </section>
+    <div id="help"><p>to know about these job you can get the information</p>
+         <br><button class="for" id="help">for help</button></div>
+    <section><span>skills</span>
+    <p>to work these project such a skill list needed</p>
+    <ul>
+        <li id="java">javascript</li>
+        <li id="css">css</li>
+        <li id="html">HTML</li>
+    </ul>
+    </section>
+    <section>contact</section>
+    <p>to register the online job please fillfull the following form</p>
+    <form id="form">
+        <label for="name">name</label>
+        <input type="text" id="name" value="name">
+        <p id="error"></p>
+        <label for="email">email</label>
+        <input type="email" id="email" value="email">
+        <p id="erroremail"></p>
+        <label for="password">password</label>
+        <input type="password" id="password" value="password">
+        <p id="errorpassword"></p>
+        <label for="sex">female</label>
+        <input type="checkbox" id="female">
+        <label for="sex">male</label>
+        <input type="checkbox" id="male">
+        <p id="errorsex"></p>
+        <p>please the sepecific you want work the job</p>
+        <label>message</label>
+        <textarea id="textarea"></textarea><br>
+        <button class="button" id="submit" type="submit">submit</button>
+
+    </form>
+    <footer>
+        <p> if you contact addition we can get the folling plateform</p>
+        <a href="https://www.facebook.com" ><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://web.telegram.org" ><i class="fa-brands fa-telegram"></i></a>
+    </footer>
+    <script>
+        const click=document.getElementById('help');
+        click.addEventListener(('click'),(event)=>{
+            window.location.href="inform.html";
+        });
+        const css=document.getElementById('css')
+        css.addEventListener(('click'),(e)=>{
+            window.location.href="csss.html"
+        })
+     const form=document.getElementById('form');  
+    const name=document.getElementById('name');
+    const email=document.getElementById('email');
+    const password=document.getElementById('password');
+    const textarea=document.getElementById('textarea');
+    const male=document.getElementById('male');
+    const female=document.getElementById('female');
+    const submit=document.getElementById('submit');
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const erroremail=document.getElementById('erroremail');
+    const errorpassword=document.getElementById('errorpassword');
+    const errorname=document.getElementById('error');
+    const errorsex=document.getElementById('error');
+
+    form.addEventListener('submit',(event)=>{
+        if(name.value==="" || name.value==="null"){
+           event.preventDefault();
+           errorname.innerHTML="ENTER name";
+        }
+        if(email.value===""|| email.value==="null"){
+            event.preventDefault();
+         erroremail.innerHTML="ENTER email";
+        }
+        if(password.value===""|| password.value==="null"){
+            event.preventDefault();
+           error.innerHTML="ENTER password";
+        }
+       else if(!passwordRegex.test(password)){
+        alert("the password fullfill the rule");
+       } 
+        else if(password.length>6){
+            errorpassword.innerHTML="the password length must be greater than 6";
+        } 
+        if(!(female.checked||male.checked)){
+            event.preventDefault();
+            errorsex.innerHTML="Please select your gender.";
+        }
+    });
+
+    </script>
+</body>
+</html>

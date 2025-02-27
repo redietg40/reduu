@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Viewer</title>
+</head>
+<body>
+
+    <button onclick="openImages()">Open Images</button>
+
+    <script>
+        function openImages() {
+            const imageURL = 'apple.jpg'; // Replace with the actual path to your first image
+            const newimage = 'cumpass.jpg'; // Replace with the actual path to your second image
+
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Image Viewer</title>
+                    <style>
+                        body {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100vh;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                        }
+                        .container {
+                            border: 5px solid black;
+                            padding: 10px;
+                            background: white;
+                            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+                            text-align: center;
+                            width: 80%;
+                        }
+                        .container img {
+                            width: 100%;
+                            max-width: 400px;
+                            margin: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <img src="${imageURL}" alt="Image 1">
+                        <img src="${newimage}" alt="Image 2">
+                    </div>
+                </body>
+                </html>
+            `;
+
+            const newwindow = window.open('', '_blank');
+
+            if (!newwindow) {
+                alert("Pop-up blocked! Please allow pop-ups for this site.");
+            } else {
+                // Cross-browser event listener for 'load' event
+                if (newwindow.addEventListener) {
+                    newwindow.addEventListener('load', () => {
+                        newwindow.document.write(htmlContent);
+                        newwindow.document.close();
+                    });
+                } else if (newwindow.attachEvent) { // For IE8 and below
+                    newwindow.attachEvent('onload', () => {
+                        newwindow.document.write(htmlContent);
+                        newwindow.document.close();
+                    });
+                } else { // Fallback (less reliable)
+                    newwindow.onload = () => {
+                        newwindow.document.write(htmlContent);
+                        newwindow.document.close();
+                    };
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

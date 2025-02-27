@@ -1,0 +1,108 @@
+
+body{
+    padding: 0%;
+    margin: 0%;
+}
+.nav-main{
+    width:100%;
+    height:80px;
+    background-color: #FFF;
+    display:flex;
+    flex-wrap:wrap;
+} 
+.image{
+width: 100px;
+height: 80px;
+}
+nav.nav-main{
+background-color: rgb(61, 152, 0);
+height: 80px;
+
+}
+ul.head{
+padding-left: 15px;
+display: flex;
+flex-wrap: wrap;
+gap: 150px;
+height: 80px;
+padding-top: 10px ;
+
+}
+.head li a{
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+color: aliceblue;
+}
+.head li{
+list-style: none;
+} 
+span.link{
+display: block;
+padding: 10px 0px;
+}
+div.dropdown{
+height: 70px;
+position: absolute;
+background-color: aqua;
+z-index: 1000;
+display: none;
+cursor: pointer;
+} 
+.cons{
+position: relative;
+} 
+a.cons:hover{
+opacity: 0.5;;
+}
+.up:hover .dropdown {
+display: block;
+}
+.link:hover{
+background-color: rgb(201, 224, 0);
+}
+.images{
+    width:100%;
+    height: 370px;
+    background-image: url("cumpass.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    cursor: pointer;
+    margin: 0%;
+    padding: 0%;
+    }
+    .title{
+        margin-left:200px;
+        font-size: 40px;
+        width: 800px;
+        color:rgb(15, 4, 4) ;
+        font-family:Arial, Helvetica, sans-serif;
+
+
+    }
+    .social{
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        gap:40px;
+        padding-left:70px;
+        align-items: center;
+        
+    } 
+    .social a{
+        font-size: 40px;
+    }
+    footer{
+        background-color: rgb(52, 48, 48);
+        margin: 0%;
+        height: 135px;
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    .social a i{
+        color:rgb(61, 152, 0);
+    }
+    .text{
+        color:blueviolet;
+    }

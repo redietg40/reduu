@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        body{
+            align-items: center;
+            justify-content: center;
+            margin: 100px;
+
+        }
+        .outer{
+            width:70px;
+            height: 40px;
+            border-radius: 40px;
+            border: 1px red solid;
+        }
+        .inner{
+            background-color: yellow;
+            border-radius:100%;
+            width: 40px;
+            height: 40px;
+            transition:transform.2s linear;
+        }
+        .move{
+            transform: translateX(30px);
+        }
+    </style>
+</head>
+<body>
+ <div class="outer">
+    <div class="inner"></div>
+ </div> 
+ <script>
+    document.querySelector(".outer").addEventListener('click',function(){
+        document.querySelector(".inner").classList.toggle("move");
+        document.querySelector(".outer").style.backgroundColor = "black";
+    });
+ </script>  
+</body>
+</html>

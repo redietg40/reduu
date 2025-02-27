@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppendChild Example</title>
+</head>
+<body>
+
+    <div id="image-container" style="border: 2px solid black; padding: 10px; width: 300px; height: 300px;">
+        <!-- The image will be inserted here -->
+    </div>
+
+    <button onclick="insertImage()">Insert Image</button>
+
+    <script>
+        function insertImage() {
+            let div = document.getElementById("image-container"); // Get the div element
+            let img = document.createElement("img"); // Create an img element
+            img.src = "women.webp"; // Set image source
+            img.alt = "Sample Image"; // Set alt text
+            img.width = 150; // Set width
+
+            div.appendChild(img); // Append img inside div
+        }
+    </script>
+
+</body>
+</html>

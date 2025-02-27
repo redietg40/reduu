@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="click();">open image</button>
+    <script>
+        function click(){
+            let imageURL = "apple.jpg";
+            let newimage = "cumpass.jpg";
+            let newwindow = window.open("", "_blank", "width=500,height=500"); // Corrected features string
+
+            if (!newwindow) { // Check for popup blocker
+                return alert("Pop-up blocked! Please allow pop-ups for this site.");
+            }
+
+            // Store the HTML content in a variable
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                    <style>
+                        body{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100vh;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                        }
+                        .container{
+                            border: 5px solid black;
+                            padding: 10px;
+                            background: white;
+                            box-shadow: 5px 5px 15px  rgba(0, 0, 0, 0.2);
+                            text-align: center;
+                            width: 80%;
+                        }
+                        .container img {
+                            width: 100%;
+                            max-width: 400px;
+                            margin: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <img src="${imageURL}" alt="Image 1">
+                        <img src="${newimage}" alt="Image 2">
+                    </div>
+                </body>
+                </html>
+            `;
+
+            // Write the content *after* the window has loaded
+            newwindow.addEventListener('load', () => {  // Modern Browsers
+                newwindow.document.write(htmlContent);
+                newwindow.document.close();
+            });// Fallback for older Browsers (IE8 and below)
+            newwindow.attachEvent('onload', () => {
+                newwindow.document.write(htmlContent);
+                newwindow.document.close();
+            });
+
+            // Less Reliable Fallback for even older browsers
+            newwindow.onload = () => {
+                newwindow.document.write(htmlContent);
+                newwindow.document.close();
+            }
+        }
+    </script>
+</body>
+</html>

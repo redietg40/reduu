@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Click to Open</title>
+</head>
+<body>
+
+    <!-- Image Button -->
+    <button onclick="openImage()">Open Image</button>
+
+    <script>
+        function openImage() {
+            let imageURL = "women.webp"; // First image
+            let newImage = "apple.jpg"; // Second image
+
+            // Open a new blank window
+            let newWindow = window.open("", "_blank", "width=500,height=500");
+
+            // Write the HTML & CSS inside the new window
+            newWindow.document.write(`
+                <html>
+                <head>
+                    <title>New Image Window</title>
+                    <style>
+                        body {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100vh;
+                            background-color: #f4f4f4;
+                            margin: 0;
+                        }
+                        .image-container {
+                            border: 5px solid black;
+                            padding: 10px;
+                            background: white;
+                            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+                            text-align: center;
+                            width: 80%;
+                        }
+                        .image-container img {
+                            width: 100%;
+                            max-width: 400px;
+                            margin: 10px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="image-container">
+                        <img src="${imageURL}" alt="Opened Image">
+                        <img src="${newImage}" alt="Opened Image">
+                    </div>
+                </body>
+                </html>
+            `);
+
+            newWindow.document.close(); // Close document writing
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Click to Open</title>
+</head>
+<body>
+
+    <!-- Image Button -->
+    <button onclick="openImage()">open image</button>
+
+
+    <script>
+        function openImage() {
+            let imageURL = "women.webp";// Replace with your image URL
+            let  newimge="apple.jpg";
+           
+            let newWindow = window.open("", "_blank", "width=500,height=500 margin_left:100px" ); // Open new window
+    newWindow.document.write(`<img src="${imageURL}" alt="Opened Image" width="100%">,<img src="${newimge}" alt="Opened Image" width="100%">`); // Insert image
+        }
+    </script>
+
+</body>
+</html>

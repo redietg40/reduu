@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introductions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .nav-main { 
+            width: 100%;
+            height: 60px;
+            background-color: #FFF;
+            display: flex;
+            flex-wrap: wrap;
+            z-index: 1000;
+            position: relative;
+        }
+        
+        .btn-toggle-nav {
+            width: 60px;
+            height: 100%;
+            background-color: #F98F39;
+            background-image: url("apple.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            cursor: pointer;
+        }
+        
+        .nav-main ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background-color: rgb(105, 105, 105);
+            height: 100%;
+            margin-top: 0px;
+            width: 600px;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .nav-main ul li {
+            list-style: none;
+            line-height: 0px;
+            margin-top: 30px;
+            position: relative; /* Needed for dropdown positioning */
+        }
+        
+        .nav-main ul li a {
+            display: block;
+            height: 100%;
+            padding: 0 50px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            color: #111;
+            font-size: 16px;
+        }
+        
+        /* Dropdown Styling */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(30, 87, 3);
+            list-style: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 150px;
+            display: none;
+            padding: 10px;
+        }
+        
+        .dropdown li {
+            padding: 10px;
+        }
+        
+        /* Show dropdown when hovering over Contact */
+        .cons:hover .dropdown {
+            display: block;
+        }
+        
+        /* Styling for dropdown links */
+        .link {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        .link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <nav class="nav-main">
+        <div class="btn-toggle-nav"></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">About Us</a></li>        
+            <li><a href="#">Gallery</a></li>
+            <li class="cons">
+                <a href="#">Contact</a>
+                <ul class="dropdown">
+                    <li><a href="#" class="link">For Students</a></li>
+                    <li><a href="#" class="link">For Trainers</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
